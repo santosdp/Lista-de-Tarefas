@@ -1,0 +1,105 @@
+body{
+    background: rgb(233,161,234);
+    background: linear-gradient(0deg, rgba(233,161,234,1) 0%, rgba(199,132,232,1) 36%, rgba(37,128,211,1) 78%);
+}
+input{
+    outline:none;
+    background: transparent;
+    border: none;
+}
+.categorias{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+.categorias label{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    background-color: #FFF;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+input[type="radio"],
+input[type="checkbox"]{
+    display: none;
+}
+.categorias label div{
+    color: #313154;
+    font-size: 1.125rem;
+    margin-top: 1rem;
+}
+.circulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #3A82EE;
+    box-shadow: 0px 0px 4px rgba(58, 130, 238, 0.75);
+}
+.circulo::after {
+    content: "";
+    display: block;
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+    background-color: #3A82EE;
+    box-shadow: 0px 0px 4px rgba(58, 130, 238, 0.75);
+    border-radius: 50%;
+    transition: 0.2s ease-in-out;
+}
+.circulo.pessoal{
+    border-color: #EA40A4;
+	box-shadow: 0px 0px 4px rgba(234, 64, 164, 0.75);
+}
+.circulo.pessoal::after {
+    background-color: #EA40A4;
+    box-shadow: 0px 0px 4px rgba(234, 64, 164, 0.75);
+}
+input:checked ~ .circulo::after {
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+}
+input[type='submit']{
+    display: block;
+    width: 100%;
+    font-size: 1.125rem;
+    padding: 0.3rem 1.5rem;
+    background-color: #F0F0F2;
+    stroke: #D9D9D9;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+input[type="submit"]:hover {
+    opacity: 0.75;
+}
+.tarefas{
+    display: flex;
+	align-items: center;
+    background-color: #FFF;
+    border-radius: 10px;
+}
+.tarefas label{
+    display: block;
+	margin-right: 1rem;
+    margin-left: 1rem;
+	cursor: pointer;
+}
+.lista-conteudo{
+    flex: 1 1 0%;
+}
+.tarefa-item.feito .lista-conteudo input{
+    text-decoration: line-through;
+    color: #888;
+}
+.opcao button:hover{
+    opacity: 0.75;
+}
